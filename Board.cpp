@@ -21,10 +21,13 @@ int Board::get_turn() {
 }
 void Board::print_board() {
 	for (int i = 0; i < 3; ++i) {
+		std::cout << "         |         |          " << std::endl;
 		for (int j = 0; j < 3; ++j) {
-			std::cout << "    " << get_position(i, j) << "    |"; 
+			std::cout << "    " << get_position(i, j);
+			if (j != 2) std::cout << "    |";
 		}
-		std::cout << std::endl;
+		std::cout << std::endl << "         |         |          " << std::endl;
+		if (i != 2) std::cout << "------------------------------" << std::endl;
 	}
 }
 int Board::check_winner() {
